@@ -1,0 +1,19 @@
+Enlace git: https://github.com/mmedcel2005/despliegue.git
+
+1º He creado ambos docker-compose
+2º Los he lanzado con la extension de visual studio
+3º He comprobado que se haya creado correctamente en docker desktop
+4º Creo el repositorio de github
+5º Clono el repositorio
+6º Subo los archivos a la carpeta del repositorio, hago commit y despue slo subo al repositorio con pull
+7º Instalo git con sudo yum install git
+8º Clono el repositorio con git clone https://github.com/mmedcel2005/despliegue.git
+9º Entro en la carpeta donde se ha guardado el repositorio
+10º Dentro tengo las dos carpetas de los ejercicios
+11º Entro en el primer ejercicio y hago docker-compose up -d y compruebo que se haya creado sin problemas
+12º Hago lo mismo con el segundo ejercicio
+13º En el segundo ejercicio me ha salido el siguiente error:
+	ERROR: Pool overlaps with other one on this address space
+	Esto quiere decir que la subred que intento usar esta siendo ya utilizada por lo que puedo cambiar 
+	la direccion de red o buscar cual lo esta usando y eliminarla, en mi caso la eliminare
+14º Una vez eliminado hago docker-compose up -d y compruebo que todo haya ido bien
