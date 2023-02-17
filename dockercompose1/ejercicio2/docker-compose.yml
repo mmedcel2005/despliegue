@@ -1,0 +1,33 @@
+version: '3.1'
+
+services:
+  mysql:
+    image: mysql
+    volumes:
+      - mi-mysql-vol:/var/lib/mysql
+    networks:
+      - mi-mysql-red
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: example
+
+  phpmyadmin:
+    image: phpmyadmin
+    ports:
+      - 8080:80
+    networks:
+      - mi-mysql-red
+    restart: always
+    environment:
+      PMA_HOST: mi-mysql
+      PMA_USER: root
+      PMA_PASSWORD: example
+
+volumes:
+  mi-mysql-vol:
+
+networks:
+  mi-mysql-red:
+    ipam:
+      config:
+        - subnet: 172.25.0.0/16
